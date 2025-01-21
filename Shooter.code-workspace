@@ -1,0 +1,879 @@
+{
+	"folders": [
+		{
+			"name": "Shooter",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"terminal.integrated.env.linux": {
+			"PATH": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+			"DOTNET_ROOT": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+			"DOTNET_HOST_PATH": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+			"DOTNET_MULTILEVEL_LOOKUP": "0",
+			"DOTNET_ROLL_FORWARD": "LatestMajor"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Shooter Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Test",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Test",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Test",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Shipping",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Shipping",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"Linux",
+					"Shipping",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Test",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Test",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Test",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Shooter LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "Shooter LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Shooter",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShooterEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"Debug",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShooterEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"DebugGame",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShooterEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			},
+			{
+				"label": "ShooterEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"ShooterEditor",
+					"Linux",
+					"Development",
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch Shooter (Debug)",
+				"request": "launch",
+				"program": "/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Binaries/Linux/UnrealGame-Linux-Debug",
+				"preLaunchTask": "Shooter Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Shooter (DebugGame)",
+				"request": "launch",
+				"program": "/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Binaries/Linux/UnrealGame-Linux-DebugGame",
+				"preLaunchTask": "Shooter Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Shooter (Development)",
+				"request": "launch",
+				"program": "/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Binaries/Linux/UnrealGame",
+				"preLaunchTask": "Shooter Linux Development Build",
+				"args": [
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Shooter (Test)",
+				"request": "launch",
+				"program": "/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Binaries/Linux/UnrealGame-Linux-Test",
+				"preLaunchTask": "Shooter Linux Test Build",
+				"args": [
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Shooter (Shipping)",
+				"request": "launch",
+				"program": "/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Binaries/Linux/UnrealGame-Linux-Shipping",
+				"preLaunchTask": "Shooter Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch ShooterEditor (Debug)",
+				"request": "launch",
+				"program": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "ShooterEditor Linux Debug Build",
+				"args": [
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject"
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch ShooterEditor (DebugGame)",
+				"request": "launch",
+				"program": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "ShooterEditor Linux DebugGame Build",
+				"args": [
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject"
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch ShooterEditor (Development)",
+				"request": "launch",
+				"program": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "ShooterEditor Linux Development Build",
+				"args": [
+					"/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject"
+				],
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0",
+				"type": "cppdbg",
+				"visualizerFile": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/tanisha-kothari/Documents/Unreal Projects/Shooter/Shooter.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"env": {
+					"PATH": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+					"DOTNET_ROOT": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+					"DOTNET_HOST_PATH": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+					"DOTNET_MULTILEVEL_LOOKUP": "0",
+					"DOTNET_ROLL_FORWARD": "LatestMajor"
+				},
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/mnt/EE301579301549CB/Unreal Engine/Linux_Unreal_Engine_5.5.0"
+			}
+		]
+	}
+}
