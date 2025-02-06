@@ -20,7 +20,7 @@ Firearm-Frenzy is a dynamic third-person shooter game developed in Unreal Engine
 2. Use the **mouse scroll** or **D-Pad (Left/Right) on a gamepad** to switch between weapons.
 3. Use the **mouse** or the **right stick on a gamepad** to aim at the enemy AI.
 4. Use the **Left Mouse Button** or the **Right Trigger on a gamepad** to shoot.
-5. Use **Spacebar** to jump.
+5. Use **Spacebar** or the **A button on a gamepad** to jump.
 6. Kill all enemies to win.
 
 
