@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "ShooterCharacter.h"
 #include "Gun.h"
 #include "ShooterGameModeBase.h"
@@ -11,7 +8,6 @@ AShooterCharacter::AShooterCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
@@ -21,10 +17,23 @@ void AShooterCharacter::BeginPlay()
 
 	Health = MaxHealth;
 
-	Gun = GetWorld()->SpawnActor<AGun>(GunClass);
-	GetMesh()->HideBoneByName(TEXT("weapon_r"), EPhysBodyOp::PBO_None);
-	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("WeaponSocket"));
-	Gun->SetOwner(this);
+	for (TSubclassOf<AGun> GunClass : GunClasses)
+	{
+		AGun* Gun = GetWorld()->SpawnActor<AGun>(GunClass);
+		if (Gun)
+		{
+			Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("WeaponSocket"));
+			Gun->SetOwner(this);
+			Guns.Add(Gun);
+			Gun->SetActorHiddenInGame(true);
+		}
+	}
+
+	if (Guns.Num() > 0)
+	{
+		ActiveIndex = 0;
+		Guns[ActiveIndex]->SetActorHiddenInGame(false);
+	}
 }
 
 bool AShooterCharacter::IsDead() const
@@ -51,6 +60,8 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 	PlayerInputComponent->BindAxis(TEXT("LookRightRate"), this, &AShooterCharacter::LookRightRate);
 	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction(TEXT("Shoot"), EInputEvent::IE_Pressed, this, &AShooterCharacter::Shoot);
+	PlayerInputComponent->BindAction(TEXT("NextWeapon"), IE_Pressed, this, &AShooterCharacter::NextWeapon);
+	PlayerInputComponent->BindAction(TEXT("PreviousWeapon"), IE_Pressed, this, &AShooterCharacter::PreviousWeapon);
 }
 
 float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent,
@@ -94,7 +105,32 @@ void AShooterCharacter::LookRightRate(float AxisValue)
 	AddControllerYawInput(AxisValue * RotationRate * GetWorld()->GetDeltaSeconds());
 }
 
+void AShooterCharacter::NextWeapon()
+{
+	int32 NewIndex = (ActiveIndex + 1) % Guns.Num();
+	SwitchToWeapon(NewIndex);
+}
+
+void AShooterCharacter::PreviousWeapon()
+{
+	int32 NewIndex = (ActiveIndex - 1 + Guns.Num()) % Guns.Num();
+	SwitchToWeapon(NewIndex);
+}
+
+void AShooterCharacter::SwitchToWeapon(int32 NewIndex)
+{
+	if (NewIndex != ActiveIndex && Guns.IsValidIndex(NewIndex))
+	{
+		Guns[ActiveIndex]->SetActorHiddenInGame(true);
+		ActiveIndex = NewIndex;
+		Guns[ActiveIndex]->SetActorHiddenInGame(false);
+	}
+}
+
 void AShooterCharacter::Shoot()
 {
-	Gun->PullTrigger();
+	if (Guns.IsValidIndex(ActiveIndex) && Guns[ActiveIndex])
+	{
+		Guns[ActiveIndex]->PullTrigger();
+	}
 }

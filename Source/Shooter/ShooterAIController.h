@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -13,9 +11,6 @@ class SHOOTER_API AShooterAIController : public AAIController
 	GENERATED_BODY()
 	
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaSeconds) override;
-
 	bool IsDead() const;
 	
 protected:
