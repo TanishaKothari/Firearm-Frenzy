@@ -5,11 +5,9 @@ Firearm-Frenzy is a dynamic third-person shooter game developed in Unreal Engine
 - Third-Person Perspective: Enjoy immersive gameplay with a third-person camera view.
 - AI Combat: Engage in thrilling battles with intelligent AI opponents.
 - Shooting Mechanics: Responsive aiming and shooting systems for fluid gameplay.
+- Weapon Switching: Seamlessly switch between multiple weapons to adapt to different combat scenarios.
 - Animation Blending: Smooth transitions between character animations for a polished experience.
 - Sound Effects: Includes an intro, an ambience sound, and shot and impact sounds for a dynamic audio experience.
-
-## Planned Features
-- Weapon Switching: Seamlessly switch between multiple weapons to adapt to different combat scenarios.
 
 ## Installation
 1. Clone the repository: ```git clone https://github.com/TanishaKothari/Firearm-Frenzy.git```
@@ -19,8 +17,9 @@ Firearm-Frenzy is a dynamic third-person shooter game developed in Unreal Engine
 
 ## How To Play
 1. Use the WASD keys to navigate the character.
-2. Use the mouse to aim and shoot at the enemy AI.
-3. Kill all enemies to win.
+2. Use the mouse scroll to switch between weapons.
+3. Use the mouse to aim and shoot at the enemy AI.
+4. Kill all enemies to win.
 
 ## Technologies Used
 - Unreal Engine 5
